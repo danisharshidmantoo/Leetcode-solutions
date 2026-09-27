@@ -2,8 +2,6 @@ class Solution:
     def maxSubarray(self, nums: List[int]) -> int:
         if len(nums)<=2:
             return len(nums)
-        if nums == [19,28,30,19,12,5,11,22,17,1,21]:
-            return 6
         l,r = 0,2
         result = 2
         possibleSum = defaultdict(int)
