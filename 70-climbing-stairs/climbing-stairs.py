@@ -1,13 +1,8 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        cache = {}
-        def helper(n):
-            if n<0:
-                return 0
-            if n == 0:
-                return 1
-            if n in cache:
-                return cache[n]
-            cache[n] = helper(n-1) + helper(n-2)
-            return cache[n]
-        return helper(n)
+        prev2,prev1 = 1,1
+        for n in range(2,n+1):
+            temp = prev2 + prev1
+            prev2 = prev1
+            prev1 = temp
+        return prev1
